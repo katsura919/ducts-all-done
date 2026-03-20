@@ -1,16 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import {
-  ArrowRight,
-  ChevronDown,
-  Facebook,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Search,
-  ShoppingCart,
-  Twitter,
-} from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import Header from "@/components/sections/Header";
 import HeroHeader from "./hero-header";
 
 function Bubble({
@@ -33,18 +26,39 @@ function Bubble({
 }
 
 export default function Hero() {
-  const menuItems = [
-    "Home",
-    "Services",
-    "Portfolio",
-    "Pages",
-    "News",
-    "Contact",
-  ];
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
+
+  useEffect(() => {
+    const updateHeaderState = () => {
+      const heroHeader = document.getElementById("hero-header");
+
+      if (!heroHeader) {
+        setShowStickyHeader(window.scrollY > 120);
+        return;
+      }
+
+      const { bottom } = heroHeader.getBoundingClientRect();
+      setShowStickyHeader(bottom <= 0);
+    };
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("resize", updateHeaderState);
+
+    return () => {
+      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("resize", updateHeaderState);
+    };
+  }, []);
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0b1f3a]">
       <HeroHeader />
+      {showStickyHeader && (
+        <div className="fixed inset-x-0 top-0 z-[70]">
+          <Header />
+        </div>
+      )}
       {/* Right-side background image */}
       <div className="absolute right-0 top-0 w-[55%] h-full hidden md:block">
         <Image

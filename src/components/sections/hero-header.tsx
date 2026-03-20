@@ -17,16 +17,16 @@ import {
 export default function HeroHeader() {
   const menuItems = [
     "Home",
+    "About Us",
     "Services",
-    "Portfolio",
-    "Pages",
-    "News",
+    "Service Areas",
+    "Reviews",
     "Contact",
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
+    <header id="hero-header" className="absolute top-0 left-0 right-0 z-50">
       <div className="hidden w-full md:block">
         <div className="rounded-b-[26px] bg-brand-navy text-white shadow-xl shadow-[#0b1f3a]/30">
           <div className="flex items-center gap-4 px-4 py-3 md:px-8 md:py-2">
@@ -93,7 +93,6 @@ export default function HeroHeader() {
               className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors hover:text-[#0d7ed9]"
             >
               {item}
-              {item !== "Contact" && <ChevronDown className="h-3.5 w-3.5" />}
             </a>
           ))}
         </nav>
