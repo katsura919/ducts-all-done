@@ -21,7 +21,7 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="bg-[#F8FAFC] py-16 px-6">
+    <section id="reviews" className="bg-[#F8FAFC] py-16 px-6">
       <div className="max-w-[1100px] mx-auto">
         <div className="inline-block bg-blue-50 text-blue-700 text-[12px] font-bold tracking-[1.2px] uppercase px-3 py-1 rounded mb-3">
           Customer Reviews

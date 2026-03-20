@@ -20,7 +20,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-white py-16 px-6">
+    <section id="how-it-works" className="bg-white py-16 px-6">
       <div className="max-w-[1100px] mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: steps */}

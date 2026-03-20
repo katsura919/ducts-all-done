@@ -22,7 +22,7 @@ const counties = [
 
 export default function ServiceArea() {
   return (
-    <section className="relative bg-[#0B1F3A] py-16 px-6 overflow-hidden">
+    <section id="service-area" className="relative bg-[#0B1F3A] py-16 px-6 overflow-hidden">
       {/* Background aerial image */}
       <div className="absolute inset-0 z-0">
         <Image

@@ -47,7 +47,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-white pt-8 pb-20 px-6">
+    <section id="services" className="bg-white pt-8 pb-20 px-6">
       <div className="max-w-[1100px] mx-auto">
         {/* Centered header */}
         <div className="text-center mb-14">
