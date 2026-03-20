@@ -76,7 +76,7 @@ export default function HeroHeader() {
       <div className="mx-auto mt-2 flex w-[96%] items-center justify-between gap-3 rounded-bl-[22px] rounded-br-[22px] bg-white px-4 py-3 text-[#152f45] shadow-lg shadow-[#0b1f3a]/20 md:mt-0 md:w-[90%] md:px-8 md:py-4 lg:w-[84%]">
         <a href="#" className="shrink-0">
           <Image
-            src="/asset/logo.webp"
+            src="/asset/logo.png"
             alt="Ducts All Done"
             width={180}
             height={52}

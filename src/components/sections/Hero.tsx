@@ -54,15 +54,20 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0b1f3a]">
       <HeroHeader />
-      {showStickyHeader && (
-        <div className="fixed inset-x-0 top-0 z-[70]">
-          <Header />
-        </div>
-      )}
+      <div
+        aria-hidden={!showStickyHeader}
+        className={`fixed inset-x-0 top-0 z-[70] transform transition-all duration-300 ease-out ${
+          showStickyHeader
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-3 opacity-0"
+        }`}
+      >
+        <Header />
+      </div>
       {/* Right-side background image */}
       <div className="absolute right-0 top-0 w-[55%] h-full hidden md:block">
         <Image
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=85"
+          src="/asset/hero-image.jpg"
           alt="Duct cleaning technician at work"
           fill
           className="object-cover object-center"
@@ -93,7 +98,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="text-blue-300 text-base">✦</span>
             <span className="text-blue-200 text-[13px] font-bold uppercase tracking-[2px]">
-              Air Duct Cleaning Services
+              Expert Air Duct Cleaning in Tampa
             </span>
           </div>
 
@@ -155,28 +160,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Cloud shapes at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
-        <svg
-          viewBox="0 0 1440 130"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,130 L0,90
-               Q40,60 80,80 Q110,95 140,72 Q170,50 210,68
-               Q240,82 270,62 Q300,44 340,65 Q370,82 410,58
-               Q440,38 480,60 Q510,78 550,55 Q580,36 620,58
-               Q655,78 690,52 Q720,30 760,55 Q795,76 830,50
-               Q860,28 900,52 Q935,74 970,48 Q1000,26 1040,50
-               Q1075,72 1110,46 Q1145,22 1185,48 Q1220,70 1260,44
-               Q1295,22 1340,48 Q1380,70 1440,50
-               L1440,130 Z"
-            fill="white"
-          />
-        </svg>
-      </div>
+
     </section>
   );
 }
