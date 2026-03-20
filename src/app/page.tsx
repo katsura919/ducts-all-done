@@ -1,5 +1,4 @@
 import { Phone, ArrowRight } from "lucide-react";
-import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import AboutSection from "@/components/sections/AboutSection";
@@ -40,7 +39,6 @@ function MidFunnelCTA({ heading, sub }: { heading: string; sub: string }) {
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
         <Hero />
         <TrustBar />

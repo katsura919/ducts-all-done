@@ -1,109 +1,168 @@
 import Image from "next/image";
-import { ArrowRight, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Facebook,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Search,
+  ShoppingCart,
+  Twitter,
+} from "lucide-react";
+import HeroHeader from "./hero-header";
+
+function Bubble({
+  size,
+  top,
+  left,
+  opacity,
+}: {
+  size: number;
+  top: string;
+  left: string;
+  opacity: number;
+}) {
+  return (
+    <div
+      className="absolute rounded-full border border-white/20 bg-white/5 backdrop-blur-[1px]"
+      style={{ width: size, height: size, top, left, opacity }}
+    />
+  );
+}
 
 export default function Hero() {
-  return (
-    <section className="bg-[#EBF8FF] pt-[58px] md:pt-[122px] overflow-hidden">
-      <div className="max-w-[1100px] mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1fr_400px] gap-10 md:gap-16 items-center">
+  const menuItems = [
+    "Home",
+    "Services",
+    "Portfolio",
+    "Pages",
+    "News",
+    "Contact",
+  ];
 
-        {/* ── LEFT: Copy ── */}
-        <div className="order-2 md:order-1">
-          {/* Tag */}
-          <div className="inline-flex items-center gap-2.5 mb-5">
-            <div className="w-8 h-8 rounded-full bg-[#152F45] flex items-center justify-center flex-shrink-0">
-              <span className="text-[#2EA3F2] text-sm font-bold">✦</span>
-            </div>
-            <span className="text-[13px] font-bold text-[#152F45] uppercase tracking-[1.5px]">
-              Tampa Bay&apos;s Trusted Duct Cleaners
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#0b1f3a]">
+      <HeroHeader />
+      {/* Right-side background image */}
+      <div className="absolute right-0 top-0 w-[55%] h-full hidden md:block">
+        <Image
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=85"
+          alt="Duct cleaning technician at work"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="55vw"
+        />
+        {/* Fade from left so it blends into the blue */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f3a] via-[#0b1f3a]/55 to-transparent" />
+        {/* Subtle bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0b1f3a]/60 to-transparent" />
+      </div>
+
+      {/* Blue gradient covering the left half */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f3a] via-[#0b1f3a]/90 to-transparent" />
+
+      {/* Decorative bubbles */}
+      <Bubble size={160} top="12%" left="1%" opacity={0.35} />
+      <Bubble size={80} top="28%" left="9%" opacity={0.3} />
+      <Bubble size={50} top="18%" left="18%" opacity={0.2} />
+      <Bubble size={110} top="58%" left="3%" opacity={0.25} />
+      <Bubble size={200} top="68%" left="-6%" opacity={0.15} />
+      <Bubble size={45} top="45%" left="22%" opacity={0.18} />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-52 pb-48">
+        <div className="max-w-xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="text-blue-300 text-base">✦</span>
+            <span className="text-blue-200 text-[13px] font-bold uppercase tracking-[2px]">
+              Air Duct Cleaning Services
             </span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-[#152F45] leading-[1.05] mb-5">
-            We Clean.<br />
-            <span className="text-[#2EA3F2]">You Breathe Easy.</span>
+          {/* Headline */}
+          <h1 className="font-heading font-extrabold text-white text-[52px] md:text-[62px] leading-[1.05] mb-6">
+            Clean Ducts.
+            <br />
+            <span className="text-[#2EA3F2]">Breathe Easy,</span>
+            <br />
+            Every Time.
           </h1>
 
-          <p className="text-[17px] text-[#3A4A5C] max-w-[500px] mb-8 leading-[1.7]">
-            Discover Tampa Bay&apos;s highest-rated air duct cleaning service. We remove years
-            of built-up dust, mold, and allergens so your family breathes clean, healthy
-            air every single day.
+          {/* Sub */}
+          <p className="text-blue-100/75 text-[17px] leading-relaxed mb-10 max-w-[440px]">
+            Tampa Bay&apos;s most trusted air duct cleaning service. We remove
+            years of built-up dust, mold, and allergens so your family breathes
+            clean, healthy air every single day.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-8">
+          {/* CTAs */}
+          <div className="flex flex-wrap items-center gap-5">
             <a
               href="#quote"
-              className="inline-flex items-center gap-2 bg-[#152F45] hover:bg-[#1e3f5a] text-white font-heading font-bold text-[16px] px-7 py-3.5 rounded-[10px] transition-colors"
+              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold text-[13px] uppercase tracking-wider px-7 py-3.5 rounded-full transition-colors shadow-lg shadow-blue-900/40"
             >
-              Get a Free Quote
-              <ArrowRight size={16} />
+              Get Free Quote <ArrowRight size={15} />
             </a>
             <a
               href="tel:8139232906"
-              className="inline-flex items-center gap-2 border-2 border-[#152F45]/30 hover:border-[#152F45] text-[#152F45] hover:bg-[#152F45] hover:text-white font-heading font-bold text-[16px] px-7 py-3.5 rounded-[10px] transition-all"
+              className="inline-flex items-center gap-3 text-white font-bold text-[16px] hover:text-blue-300 transition-colors"
             >
-              <Phone size={16} strokeWidth={2.5} />
-              813-923-2906
+              <span className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white/30 bg-white/10">
+                <Phone size={16} />
+              </span>
+              (813) 923-2906
             </a>
           </div>
 
-          {/* Social proof row */}
-          <div className="flex items-center gap-4 pt-7 border-t border-[#2EA3F2]/20">
+          {/* Social proof */}
+          <div className="flex items-center gap-4 mt-10 pt-8 border-t border-white/10">
             <div className="flex -space-x-2">
               {["JS", "MT", "SO", "KL"].map((init) => (
                 <div
                   key={init}
-                  className="w-9 h-9 rounded-full bg-[#152F45] border-2 border-white flex items-center justify-center text-[11px] font-bold text-white"
+                  className="w-9 h-9 rounded-full bg-[#152F45] border-2 border-[#0b1f3a] flex items-center justify-center text-[10px] font-bold text-white"
                 >
                   {init}
                 </div>
               ))}
             </div>
             <div>
-              <div className="flex items-center gap-1 text-yellow-400 text-sm leading-none">★★★★★</div>
-              <p className="text-[13px] text-gray-500 mt-0.5">
-                <strong className="text-[#152F45]">114+ homeowners</strong> give us 5 stars
+              <div className="text-yellow-400 text-sm leading-none">★★★★★</div>
+              <p className="text-blue-200/70 text-[12px] mt-0.5">
+                <strong className="text-white">114+ homeowners</strong> give us
+                5 stars
               </p>
             </div>
           </div>
         </div>
-
-        {/* ── RIGHT: Photo + badges ── */}
-        <div className="order-1 md:order-2 relative mt-4 md:mt-0">
-          {/* Main photo */}
-          <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(21,47,69,0.18)]">
-            <Image
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-              alt="Ducts All Done certified technician at work"
-              fill
-              className="object-cover object-top"
-              priority
-              sizes="(max-width: 768px) 100vw, 400px"
-            />
-          </div>
-
-          {/* Top-right badge: 100% Guarantee */}
-          <div className="absolute -top-4 -right-2 md:-right-4 bg-[#152F45] text-white rounded-2xl px-5 py-4 shadow-xl text-center z-10">
-            <div className="text-[#2EA3F2] font-heading font-extrabold text-[26px] leading-none">100%</div>
-            <div className="text-[10px] font-semibold uppercase tracking-wide mt-1 text-white/80">Satisfaction</div>
-            <div className="text-[10px] font-semibold uppercase tracking-wide text-white/80">Guaranteed</div>
-          </div>
-
-          {/* Bottom-left floating card: same-day */}
-          <div className="absolute -bottom-4 -left-2 md:-left-4 bg-white border border-gray-100 rounded-xl shadow-lg px-4 py-3 flex items-center gap-3 z-10">
-            <div className="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-              <span className="text-green-600 font-bold">✓</span>
-            </div>
-            <div>
-              <div className="text-[12px] font-bold text-[#152F45]">Same-Day Available</div>
-              <div className="text-[11px] text-gray-400">Call before noon</div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      {/* Bottom padding so floating badges don't clip */}
-      <div className="h-6" />
+      {/* Cloud shapes at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <svg
+          viewBox="0 0 1440 130"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,130 L0,90
+               Q40,60 80,80 Q110,95 140,72 Q170,50 210,68
+               Q240,82 270,62 Q300,44 340,65 Q370,82 410,58
+               Q440,38 480,60 Q510,78 550,55 Q580,36 620,58
+               Q655,78 690,52 Q720,30 760,55 Q795,76 830,50
+               Q860,28 900,52 Q935,74 970,48 Q1000,26 1040,50
+               Q1075,72 1110,46 Q1145,22 1185,48 Q1220,70 1260,44
+               Q1295,22 1340,48 Q1380,70 1440,50
+               L1440,130 Z"
+            fill="white"
+          />
+        </svg>
+      </div>
     </section>
   );
 }
