@@ -112,7 +112,7 @@ export default function Services() {
                   {s.title}
                 </h3>
                 <p className="text-[14px] text-gray-500 leading-[1.65]">{s.desc}</p>
-                
+
                 <div className="mt-5 text-[12px] font-bold text-[#F97316] uppercase tracking-wider flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   View Before & After <span className="text-[16px] leading-none mb-0.5">→</span>
                 </div>
