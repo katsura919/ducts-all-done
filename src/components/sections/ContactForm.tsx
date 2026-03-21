@@ -24,7 +24,7 @@ export default function ContactForm() {
 
         {/* ── LEFT: Trust copy ── */}
         <div className="md:pt-4">
-          <div className="inline-block bg-[#EBF8FF] text-[#2EA3F2] text-[12px] font-bold tracking-[1.2px] uppercase px-3.5 py-1 rounded-full mb-4">
+          <div className="inline-block bg-blue-50 text-blue-700 text-[12px] font-bold tracking-[1.2px] uppercase px-3 py-1 rounded mb-4">
             Free Estimate
           </div>
           <h2 className="font-heading font-bold text-[#152F45] leading-[1.1] mb-3">
@@ -45,9 +45,9 @@ export default function ContactForm() {
           {/* Phone CTA */}
           <a
             href="tel:8139232906"
-            className="flex items-center gap-3 bg-[#152F45] hover:bg-[#1e3f5a] text-white px-5 py-4 rounded-xl mb-8 transition-colors group w-fit"
+            className="flex items-center gap-3 bg-[#152F45] hover:bg-[#1e3f5a] text-white px-5 py-4 rounded-xl mb-8 transition-all hover:shadow-lg hover:-translate-y-0.5 group w-fit"
           >
-            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
               <Phone size={18} className="text-[#2EA3F2]" />
             </div>
             <div>
@@ -57,10 +57,10 @@ export default function ContactForm() {
           </a>
 
           {/* Trust bullets */}
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {trustPoints.map((p) => (
-              <li key={p} className="flex items-center gap-3 text-[14px] text-gray-600">
-                <CheckCircle size={16} className="text-[#2EA3F2] flex-shrink-0" />
+              <li key={p} className="flex items-start gap-3 text-[14px] text-gray-600 font-medium">
+                <CheckCircle size={18} className="text-[#2EA3F2] flex-shrink-0 mt-0.5" />
                 {p}
               </li>
             ))}
@@ -68,7 +68,7 @@ export default function ContactForm() {
         </div>
 
         {/* ── RIGHT: Form ── */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-[0_8px_40px_rgba(21,47,69,0.10)]">
+        <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 shadow-xl">
           {submitted ? (
             <div className="text-center py-12">
               <div className="text-5xl mb-4">✅</div>
@@ -84,7 +84,7 @@ export default function ContactForm() {
               <h3 className="font-heading font-bold text-[22px] text-[#152F45] mb-1">
                 Tell Us About Your Home
               </h3>
-              <p className="text-[14px] text-gray-500 mb-6">
+              <p className="text-[14px] text-gray-500 mb-6 font-medium">
                 Fill this out and we&apos;ll send you a free, no-pressure estimate.
               </p>
 
@@ -92,28 +92,28 @@ export default function ContactForm() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[13px] font-semibold text-[#3A4A5C]">First Name</label>
-                    <input type="text" placeholder="John" required className="w-full px-3.5 py-2.5 border-[1.5px] border-gray-200 focus:border-[#2EA3F2] rounded-lg text-[14px] text-[#152F45] outline-none bg-white transition-colors" />
+                    <input type="text" placeholder="John" required className="w-full px-3.5 py-2.5 border border-gray-200 focus:border-[#2EA3F2] focus:ring-2 focus:ring-[#2EA3F2]/20 rounded-lg text-[14px] text-[#152F45] outline-none bg-gray-50/50 focus:bg-white transition-all shadow-sm" />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[13px] font-semibold text-[#3A4A5C]">Last Name</label>
-                    <input type="text" placeholder="Smith" required className="w-full px-3.5 py-2.5 border-[1.5px] border-gray-200 focus:border-[#2EA3F2] rounded-lg text-[14px] text-[#152F45] outline-none bg-white transition-colors" />
+                    <input type="text" placeholder="Smith" required className="w-full px-3.5 py-2.5 border border-gray-200 focus:border-[#2EA3F2] focus:ring-2 focus:ring-[#2EA3F2]/20 rounded-lg text-[14px] text-[#152F45] outline-none bg-gray-50/50 focus:bg-white transition-all shadow-sm" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[13px] font-semibold text-[#3A4A5C]">Email</label>
-                    <input type="email" placeholder="john@email.com" required className="w-full px-3.5 py-2.5 border-[1.5px] border-gray-200 focus:border-[#2EA3F2] rounded-lg text-[14px] text-[#152F45] outline-none bg-white transition-colors" />
+                    <input type="email" placeholder="john@email.com" required className="w-full px-3.5 py-2.5 border border-gray-200 focus:border-[#2EA3F2] focus:ring-2 focus:ring-[#2EA3F2]/20 rounded-lg text-[14px] text-[#152F45] outline-none bg-gray-50/50 focus:bg-white transition-all shadow-sm" />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[13px] font-semibold text-[#3A4A5C]">Phone</label>
-                    <input type="tel" placeholder="(813) 555-0000" required className="w-full px-3.5 py-2.5 border-[1.5px] border-gray-200 focus:border-[#2EA3F2] rounded-lg text-[14px] text-[#152F45] outline-none bg-white transition-colors" />
+                    <input type="tel" placeholder="(813) 555-0000" required className="w-full px-3.5 py-2.5 border border-gray-200 focus:border-[#2EA3F2] focus:ring-2 focus:ring-[#2EA3F2]/20 rounded-lg text-[14px] text-[#152F45] outline-none bg-gray-50/50 focus:bg-white transition-all shadow-sm" />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[13px] font-semibold text-[#3A4A5C]">Service Needed</label>
-                  <select required className="w-full px-3.5 py-2.5 border-[1.5px] border-gray-200 focus:border-[#2EA3F2] rounded-lg text-[14px] text-[#152F45] outline-none bg-white transition-colors">
+                  <select required className="w-full px-3.5 py-2.5 border border-gray-200 focus:border-[#2EA3F2] focus:ring-2 focus:ring-[#2EA3F2]/20 rounded-lg text-[14px] text-[#152F45] outline-none bg-gray-50/50 focus:bg-white transition-all shadow-sm">
                     <option value="">Select a service...</option>
                     <option>Air Duct Cleaning</option>
                     <option>Dryer Vent Cleaning</option>
@@ -127,18 +127,18 @@ export default function ContactForm() {
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[13px] font-semibold text-[#3A4A5C]">Message <span className="text-gray-400 font-normal">(optional)</span></label>
-                  <textarea placeholder="Tell us about your home, any concerns, or preferred dates..." rows={3} className="w-full px-3.5 py-2.5 border-[1.5px] border-gray-200 focus:border-[#2EA3F2] rounded-lg text-[14px] text-[#152F45] outline-none bg-white transition-colors resize-y min-h-[80px]" />
+                  <textarea placeholder="Tell us about your home, any concerns, or preferred dates..." rows={3} className="w-full px-3.5 py-2.5 border border-gray-200 focus:border-[#2EA3F2] focus:ring-2 focus:ring-[#2EA3F2]/20 rounded-lg text-[14px] text-[#152F45] outline-none bg-gray-50/50 focus:bg-white transition-all resize-y min-h-[80px] shadow-sm" />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[#F97316] hover:bg-orange-600 text-white font-heading font-bold text-[17px] rounded-[10px] transition-all hover:-translate-y-px shadow-[0_4px_20px_rgba(249,115,22,0.35)] mt-1 cursor-pointer"
+                  className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-heading font-bold text-[17px] rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 mt-2 cursor-pointer"
                 >
-                  Send My Free Estimate Request →
+                  Submit
                 </button>
 
                 <p className="text-[12px] text-gray-400 text-center mt-1">
-                  🔒 No spam. We&apos;ll only contact you about your request.
+                  No spam. We&apos;ll only contact you about your request.
                 </p>
               </form>
             </>

@@ -10,7 +10,7 @@ import FAQ from "@/components/sections/FAQ";
 import ContactForm from "@/components/sections/ContactForm";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/sections/Footer";
-
+import WhyUs from "@/components/sections/WhyUs";
 function MidFunnelCTA({ heading, sub }: { heading: string; sub: string }) {
   return (
     <div className="bg-[#EBF8FF] py-10 px-6 text-center border-y border-[#2EA3F2]/12">
@@ -42,24 +42,15 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
-        {/* <AboutSection /> */}
         <Services />
+        <WhyUs />
         <HowItWorks />
         <Reviews />
-        <MidFunnelCTA
-          heading="Join 1,000+ happy Tampa Bay homeowners."
-          sub="Get your free estimate in minutes. No pressure, no obligation."
-        />
         <ServiceArea />
         <FAQ />
-        <MidFunnelCTA
-          heading="Still have questions? We're a real local team."
-          sub="Call us directly or fill out the form — we respond fast."
-        />
         <ContactForm />
         <FinalCTA />
       </main>
-      <Footer />
     </>
   );
 }

@@ -1,46 +1,95 @@
-import { Phone, ArrowRight, Mail, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, ChevronRight, Calendar } from "lucide-react";
+import { div } from "motion/react-client";
 
 export default function FinalCTA() {
   return (
-    <section className="bg-gradient-to-br from-blue-700 via-[#1565C0] to-[#0B1F3A] py-20 px-6 text-center">
-      <h2 className="font-heading font-extrabold text-white mb-3">
-        Ready to Breathe Better?
-      </h2>
-      <p className="text-[17px] text-white/75 mb-9 max-w-[520px] mx-auto leading-[1.65]">
-        Tampa&apos;s trusted duct cleaning team is ready to help. Call now for same-day service or get your free estimate.
-      </p>
+    <footer className="bg-[#152F45] text-white">
+      {/* ── Top Contact Bar Removed ── */}
 
-      <div className="flex justify-center flex-wrap gap-4 mb-9">
-        <a
-          href="tel:8139232906"
-          className="inline-flex items-center gap-2 bg-white text-[#0B1F3A] font-heading font-bold text-[18px] px-7 py-3.5 rounded-[10px] shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 transition-all"
-        >
-          <Phone size={18} />
-          Call 813-923-2906
-        </a>
-        <a
-          href="#quote"
-          className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-heading font-bold text-[18px] px-7 py-3.5 rounded-[10px] shadow-[0_4px_20px_rgba(249,115,22,0.35)] hover:-translate-y-0.5 transition-all"
-        >
-          Get a Free Quote
-          <ArrowRight size={18} />
-        </a>
+      {/* ── Main Footer Content ── */}
+      <div className="max-w-[1200px] mx-auto px-6 pb-16 pt-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 border-none">
+          
+          {/* Left Side: Brand Info */}
+          <div className="w-full lg:max-w-[400px]">
+            <div className="mb-6 w-full max-w-[240px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/asset/logo.png" alt="Ducts All Done Logo" className="w-full h-auto object-contain" />
+            </div>
+            <p className="text-[14px] text-blue-100/70 leading-[1.8] mb-8 font-medium">
+              Clear communication successful cleaning service relationship. Make sure you can easily service is easy exceptional service every time changes.
+            </p>
+            <div className="flex gap-3">
+              {[Facebook, Twitter, Linkedin].map((Icon, i) => (
+                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/20 hover:bg-white hover:border-white hover:text-[#152F45] flex items-center justify-center transition-all group">
+                  <Icon size={16} className="text-white group-hover:text-[#152F45]" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Side: Services & Quick Links */}
+          <div className="flex flex-col sm:flex-row gap-12 lg:gap-24">
+            {/* Column 2: Services */}
+            <div>
+              <h4 className="text-[20px] font-bold text-white mb-8">Services</h4>
+              <ul className="space-y-4 text-[15px] font-medium text-[#2EA3F2]">
+                {[
+                  "Air Duct Cleaning",
+                  "Dryer Vent Cleaning",
+                  "Chimney Sweep",
+                  "Attic Insulation",
+                  "Duct Sanitizing",
+                  "UV Light Installation",
+                ].map((item) => (
+                  <li key={item}>
+                    <a href="#services" className="flex items-center gap-2.5 hover:text-white transition-colors group">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Quick Link */}
+            <div>
+              <h4 className="text-[20px] font-bold text-white mb-8">Quick Link</h4>
+              <ul className="space-y-4 text-[15px] font-medium text-[#2EA3F2]">
+                {[
+                  { name: "Home", href: "#" },
+                  { name: "About", href: "#" },
+                  { name: "Services", href: "#services" },
+                  { name: "Portfolio", href: "#" },
+                  { name: "Pages", href: "#" },
+                  { name: "Contact", href: "#quote" },
+                ].map((link) => (
+                  <li key={link.name}>
+                    <a href={link.href} className="flex items-center gap-2.5 hover:text-white transition-colors group">
+                     
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 text-[14px] text-white/70">
-        <a href="mailto:office@ductsalldone.com" className="flex items-center gap-2 hover:text-white transition-colors">
-          <Mail size={15} />
-          office@ductsalldone.com
-        </a>
-        <span className="flex items-center gap-2">
-          <MapPin size={15} />
-          13542 N Florida Ave, Tampa FL 33613
-        </span>
-        <span className="flex items-center gap-2">
-          <Clock size={15} />
-          Mon–Thu &amp; Sun: 6AM–9PM &nbsp;|&nbsp; Fri: 6AM–5PM
-        </span>
+      {/* ── Footer Bottom ── */}
+      <div className="border-t border-white/10 py-7 px-6 bg-[#132A3E]">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-[15px] text-white font-medium">
+          <p>Copyright@ {new Date().getFullYear()} Ducts All Done. All Rights Reserved.</p>
+          <div className="flex gap-4 items-center">
+            <a href="#privacy" className="hover:text-[#2EA3F2] transition-colors">Setting &amp; Privacy</a>
+            <span className="text-white/30 hidden sm:block">/</span>
+            <a href="#faq" className="hover:text-[#2EA3F2] transition-colors">FAQ</a>
+            <span className="text-white/30 hidden sm:block">/</span>
+            <a href="#support" className="hover:text-[#2EA3F2] transition-colors">Support</a>
+          </div>
+        </div>
       </div>
-    </section>
+    </footer>
   );
 }

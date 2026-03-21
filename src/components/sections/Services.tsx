@@ -100,25 +100,10 @@ export default function Services() {
             <div
               key={s.num}
               onClick={() => setSelectedService(s)}
-              className="bg-primary border border-gray-200 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-[0_12px_40px_rgba(21,47,69,0.12)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+              className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
             >
-              {/* Card top: number + title + desc */}
-              <div className="p-6 flex-1 relative">
-                <div className="font-heading font-extrabold text-[2.5rem] text-white opacity-40 leading-none mb-2 group-hover:opacity-70 transition-opacity">
-                  {s.num}
-                </div>
-                <h3 className="font-heading font-bold text-[19px] text-white mb-2 group-hover:text-[#2EA3F2] transition-colors">
-                  {s.title}
-                </h3>
-                <p className="text-[14px] text-white leading-[1.65]">{s.desc}</p>
-
-                <div className="mt-5 text-[12px] font-bold text-[#F97316] uppercase tracking-wider flex items-center gap-1 transition-opacity">
-                  View Before & After <span className="text-[16px] leading-none mb-0.5">→</span>
-                </div>
-              </div>
-
-              {/* Photo at card bottom with overlapping CTA */}
-              <div className="relative h-[180px]">
+              {/* Photo at card top */}
+              <div className="relative h-[220px] overflow-hidden">
                 <Image
                   src={s.photo}
                   alt={s.alt}
@@ -126,18 +111,38 @@ export default function Services() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                {/* Gradient overlay for CTA readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#152F45]/85 via-[#152F45]/30 to-transparent pointer-events-none" />
-                {/* CTA button — sits over the photo gradient */}
-                <div className="absolute bottom-4 left-4 right-4 z-10">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
+                
+                {/* Visual badge with step number */}
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white/95 backdrop-blur-sm text-[#152F45] text-[13px] font-bold px-3 py-1 rounded-full shadow-sm">
+                    {s.num}
+                  </span>
+                </div>
+              </div>
+
+              {/* Card content: title + desc + actions */}
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="font-heading font-bold text-[20px] text-[#152F45] mb-2 group-hover:text-blue-500 transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-[14px] text-gray-500 leading-[1.65] flex-1 mb-6">
+                  {s.desc}
+                </p>
+
+                <div className="flex items-center justify-between mt-auto">
+                  <div className="text-[12px] font-bold text-blue-500 uppercase tracking-wider flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                    Compare <span className="text-[16px] leading-none mb-0.5">→</span>
+                  </div>
+                  
                   <div
-                    className="block text-center bg-blue-500 hover:bg-[#efc932] text-white font-heading font-bold text-[14px] py-2.5 rounded-[8px] transition-colors shadow-[0_4px_16px_rgba(249,115,22,0.45)]"
+                    className="bg-[#152F45] hover:bg-blue-500 text-white font-heading font-bold text-[13px] px-4 py-2.5 rounded-lg transition-colors shadow-sm"
                     onClick={(e) => {
-                      e.stopPropagation(); // Prevents opening the modal when clicking the quote button explicitly
+                      e.stopPropagation();
                       window.location.href = "#quote";
                     }}
                   >
-                    Request a Quote
+                    Quote
                   </div>
                 </div>
               </div>

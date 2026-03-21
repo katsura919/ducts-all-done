@@ -45,19 +45,23 @@ export default function ServiceArea() {
           If you&apos;re in the Greater Tampa Bay area, we&apos;ve got you covered.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {counties.map((county) => (
-            <div key={county.name} className="bg-white/6 border border-white/10 rounded-[10px] p-4">
-              <div className="flex items-center gap-1.5 mb-3">
-                <MapPin size={13} className="text-[#2EA3F2]" />
+            <div 
+              key={county.name} 
+              className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/[0.06] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin size={16} className="text-[#2EA3F2]" />
                 <h4 className="font-heading font-bold text-[15px] text-[#2EA3F2] uppercase tracking-[0.5px]">
                   {county.name}
                 </h4>
               </div>
-              <ul className="space-y-0.5">
+              <ul className="space-y-2.5 mt-2">
                 {county.cities.map((city) => (
-                  <li key={city} className="text-[13px] text-white/70 before:content-['→_'] before:text-[#2EA3F2] before:text-[11px]">
-                    {city}
+                  <li key={city} className="flex items-start justify-start gap-2.5 group -ml-1 pl-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#2EA3F2]/40 mt-[7px] flex-shrink-0 group-hover:bg-[#2EA3F2] transition-colors" />
+                    <span className="text-[14px] text-white/70 font-medium group-hover:text-white transition-colors leading-[1.4]">{city}</span>
                   </li>
                 ))}
               </ul>
