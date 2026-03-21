@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 export default function Header() {
   const menuItems = [
@@ -44,9 +44,10 @@ export default function Header() {
         <div className="flex items-center gap-2 md:gap-3">
           <a
             href="tel:8139232906"
-            className="inline-flex items-center justify-center rounded-xl bg-[#f4d34f] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.09em] text-[#152f45] transition-colors hover:bg-[#efc932] sm:px-4 sm:text-[12px] md:px-5 md:py-2.5"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#f4d34f] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.09em] text-[#152f45] transition-colors hover:bg-[#efc932] sm:px-4 sm:text-[12px] md:px-5 md:py-2.5"
           >
-            Call Now
+            <Phone className="h-4 w-4" />
+            <span>(813) 923-2906</span>
           </a>
 
           <button
