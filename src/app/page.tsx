@@ -42,7 +42,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
-        <AboutSection />
+        {/* <AboutSection /> */}
         <Services />
         <HowItWorks />
         <MidFunnelCTA
