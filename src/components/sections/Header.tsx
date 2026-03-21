@@ -43,10 +43,10 @@ export default function Header() {
 
         <div className="flex items-center gap-2 md:gap-3">
           <a
-            href="#quote"
+            href="tel:8139232906"
             className="inline-flex items-center justify-center rounded-xl bg-[#f4d34f] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.09em] text-[#152f45] transition-colors hover:bg-[#efc932] sm:px-4 sm:text-[12px] md:px-5 md:py-2.5"
           >
-            Get a Quote
+            Call Now
           </a>
 
           <button
