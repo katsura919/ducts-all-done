@@ -28,15 +28,24 @@ export default function HeroHeader() {
   return (
     <header id="hero-header" className="absolute top-0 left-0 right-0 z-50">
       <div className="hidden w-full md:block">
-        <div className="rounded-b-[26px] bg-brand-navy text-white shadow-xl shadow-[#0b1f3a]/30">
+        <div className="rounded-b-[26px] bg-blue-500 text-white shadow-xl shadow-[#0b1f3a]/30">
           <div className="flex items-center gap-4 px-4 py-3 md:px-8 md:py-2">
             <div className="hidden min-w-0 flex-1 items-center justify-center gap-6 md:flex lg:gap-10">
               <a
                 href="tel:8139232906"
                 className="flex items-center gap-2 border-r border-white/25 pr-6 lg:pr-10"
               >
-                <Phone className="h-4 w-4" />
-                <span className="text-[13px] font-semibold tracking-wide">
+                <Phone className="h-4 w-4 text-primary-foreground" />
+                <span className="text-[13px] font-semibold tracking-wide text-primary-foreground">
+                  We Are Open!
+                </span>
+              </a>
+              <a
+                href="tel:8139232906"
+                className="flex items-center gap-2 border-r border-white/25 pr-6 lg:pr-10"
+              >
+                <Phone className="h-4 w-4 text-primary-foreground" />
+                <span className="text-[13px] font-semibold tracking-wide text-primary-foreground">
                   (813) 923-2906
                 </span>
               </a>
@@ -44,15 +53,15 @@ export default function HeroHeader() {
                 href="mailto:helpcleaning@gmail.com"
                 className="flex items-center gap-2 border-r border-white/25 pr-6 lg:pr-10"
               >
-                <Mail className="h-4 w-4" />
-                <span className="text-[13px] font-semibold tracking-wide">
-                  helpcleaning@gmail.com
+                <Mail className="h-4 w-4 text-primary-foreground" />
+                <span className="text-[13px] font-semibold tracking-wide text-primary-foreground">
+                  office@ductsalldone.com
                 </span>
               </a>
               <a href="#contact" className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span className="text-[13px] font-semibold tracking-wide">
-                  Tampa, Florida
+                <MapPin className="h-4 w-4 text-primary-foreground" />
+                <span className="text-[13px] font-semibold tracking-wide text-primary-foreground">
+                  13542 N Florida Ave. #211B Tampa, FL 33613
                 </span>
               </a>
             </div>
@@ -90,7 +99,7 @@ export default function HeroHeader() {
             <a
               key={item}
               href="#"
-              className="inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors hover:text-[#0d7ed9]"
+              className="text-primary inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors hover:text-[#0d7ed9]"
             >
               {item}
             </a>

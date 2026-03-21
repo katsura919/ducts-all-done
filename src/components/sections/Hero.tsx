@@ -77,7 +77,17 @@ export default function Hero() {
         {/* Fade from left so it blends into the blue */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f3a] via-[#0b1f3a]/55 to-transparent" />
         {/* Subtle bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0b1f3a]/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0b1f3a]/60 to-transparent z-10" />
+
+        {/* Foreground overlay image */}
+        <Image
+          src="/asset/hero-image-tech.png"
+          alt="Duct cleaning technician overlay"
+          fill
+          className="object-contain object-bottom z-20 scale-[1.35] origin-bottom"
+          priority
+          sizes="70vw"
+        />
       </div>
 
       {/* Blue gradient covering the left half */}
@@ -159,7 +169,29 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
+      
+       {/* Cloud shapes at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <svg
+          viewBox="0 0 1440 130"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,130 L0,90
+               Q40,60 80,80 Q110,95 140,72 Q170,50 210,68
+               Q240,82 270,62 Q300,44 340,65 Q370,82 410,58
+               Q440,38 480,60 Q510,78 550,55 Q580,36 620,58
+               Q655,78 690,52 Q720,30 760,55 Q795,76 830,50
+               Q860,28 900,52 Q935,74 970,48 Q1000,26 1040,50
+               Q1075,72 1110,46 Q1145,22 1185,48 Q1220,70 1260,44
+               Q1295,22 1340,48 Q1380,70 1440,50
+               L1440,130 Z"
+            fill="white"
+          />
+        </svg>
+      </div>
 
     </section>
   );
