@@ -84,9 +84,9 @@ export default function Hero() {
           src="/asset/hero-image-tech.png"
           alt="Duct cleaning technician overlay"
           fill
-          className="object-contain object-bottom z-20 scale-[1.35] origin-bottom"
+          className="object-contain object-bottom z-20 origin-bottom md:scale-[1.85] md:translate-x-[12%] lg:scale-[1.45] lg:translate-x-[2%] xl:scale-[1.35] xl:translate-x-0"
           priority
-          sizes="70vw"
+          sizes="(max-width: 1024px) 80vw, 60vw"
         />
       </div>
 
