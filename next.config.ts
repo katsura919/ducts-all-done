@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "ductsalldone.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+      }
     ],
   },
 };

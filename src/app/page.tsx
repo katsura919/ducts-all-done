@@ -45,10 +45,6 @@ export default function Home() {
         {/* <AboutSection /> */}
         <Services />
         <HowItWorks />
-        <MidFunnelCTA
-          heading="Ready to breathe cleaner air?"
-          sub="Schedule your service today — same-day appointments often available."
-        />
         <Reviews />
         <MidFunnelCTA
           heading="Join 1,000+ happy Tampa Bay homeowners."

@@ -32,37 +32,37 @@ const services = [
     num: "03",
     title: "Chimney Sweep",
     desc: "Professional chimney cleaning, inspection, and repair to keep your fireplace safe and functional.",
-    photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
+    photo: "/asset/services/chimney-sweep/after.png",
     alt: "Chimney sweep and inspection",
-    beforeImage: DIRTY_DUCT_IMG,
-    afterImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    beforeImage: "/asset/services/chimney-sweep/before.jpg",
+    afterImage: "/asset/services/chimney-sweep/after.png",
   },
   {
     num: "04",
     title: "Attic Insulation",
     desc: "Lower energy bills and improve comfort with proper attic insulation installation and replacement.",
-    photo: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    photo: "/asset/services/attic-insulation/after.png",
     alt: "Attic insulation installation",
-    beforeImage: DIRTY_DUCT_IMG,
-    afterImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    beforeImage: "/asset/services/attic-insulation/before.png",
+    afterImage: "/asset/services/attic-insulation/after.png",
   },
   {
     num: "05",
     title: "Duct Sanitizing",
     desc: "EPA-approved treatments to kill bacteria, mold spores, and allergens inside your duct system.",
-    photo: "https://images.unsplash.com/photo-1567173875861-c63f1f7dcb70?w=600&q=80",
+    photo: "/asset/services/duct-sanitize/after.png",
     alt: "Duct sanitizing treatment",
-    beforeImage: DIRTY_DUCT_IMG,
-    afterImage: "https://images.unsplash.com/photo-1567173875861-c63f1f7dcb70?w=800&q=80",
+    beforeImage: "/asset/services/duct-sanitize/before.webp",
+    afterImage: "/asset/services/duct-sanitize/after.png",
   },
   {
     num: "06",
     title: "UV Light Installation",
     desc: "UV germicidal lights installed in your HVAC system continuously neutralize airborne pathogens.",
-    photo: "https://images.unsplash.com/photo-1606929464555-c54e4bbfb12e?w=600&q=80",
+    photo: "/asset/services/uv-light/after.png",
     alt: "UV light HVAC installation",
-    beforeImage: DIRTY_DUCT_IMG,
-    afterImage: "https://images.unsplash.com/photo-1606929464555-c54e4bbfb12e?w=800&q=80",
+    beforeImage: "/asset/services/uv-light/before.webp",
+    afterImage: "/asset/services/uv-light/after.png",
   },
 ];
 
@@ -90,8 +90,7 @@ export default function Services() {
             Everything Your Home&apos;s Air System Needs
           </h2>
           <p className="text-[16px] text-gray-500 max-w-[520px] mx-auto leading-[1.65]">
-            Residential &amp; commercial. All makes and models. Tampa Bay&apos;s most trusted team
-            — backed by IICRC &amp; EPA certifications.
+            Residential &amp; commercial. All makes and models. Tampa Bay&apos;s most trusted team, backed by IICRC &amp; EPA certifications.
           </p>
         </div>
 
@@ -101,19 +100,19 @@ export default function Services() {
             <div
               key={s.num}
               onClick={() => setSelectedService(s)}
-              className="bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-[0_12px_40px_rgba(21,47,69,0.12)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+              className="bg-primary border border-gray-200 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-[0_12px_40px_rgba(21,47,69,0.12)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
             >
               {/* Card top: number + title + desc */}
               <div className="p-6 flex-1 relative">
-                <div className="font-heading font-extrabold text-[2.5rem] text-primary opacity-40 leading-none mb-2 group-hover:opacity-70 transition-opacity">
+                <div className="font-heading font-extrabold text-[2.5rem] text-white opacity-40 leading-none mb-2 group-hover:opacity-70 transition-opacity">
                   {s.num}
                 </div>
-                <h3 className="font-heading font-bold text-[19px] text-[#152F45] mb-2 group-hover:text-[#2EA3F2] transition-colors">
+                <h3 className="font-heading font-bold text-[19px] text-white mb-2 group-hover:text-[#2EA3F2] transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-[14px] text-gray-500 leading-[1.65]">{s.desc}</p>
+                <p className="text-[14px] text-white leading-[1.65]">{s.desc}</p>
 
-                <div className="mt-5 text-[12px] font-bold text-[#F97316] uppercase tracking-wider flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-5 text-[12px] font-bold text-[#F97316] uppercase tracking-wider flex items-center gap-1 transition-opacity">
                   View Before & After <span className="text-[16px] leading-none mb-0.5">→</span>
                 </div>
               </div>
