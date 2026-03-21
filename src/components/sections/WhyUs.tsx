@@ -3,7 +3,7 @@ import { Award, ThumbsUp, Home, Zap, CreditCard, Search } from "lucide-react";
 
 export default function WhyUs() {
   return (
-    <section className="bg-[#F8FAFC] py-24 px-6 overflow-hidden">
+    <section id="about" className="bg-[#F8FAFC] py-24 px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         
         {/* Header Section */}

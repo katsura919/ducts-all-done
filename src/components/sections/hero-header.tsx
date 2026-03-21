@@ -16,12 +16,12 @@ import {
 
 export default function HeroHeader() {
   const menuItems = [
-    "Home",
-    "About Us",
-    "Services",
-    "Service Areas",
-    "Reviews",
-    "Contact",
+    { name: "Home", href: "#home" },
+    { name: "About Us", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Service Areas", href: "#service-area" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "Contact", href: "#quote" },
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -97,11 +97,11 @@ export default function HeroHeader() {
         <nav className="hidden items-center justify-start gap-x-6 md:flex lg:gap-8">
           {menuItems.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.name}
+              href={item.href}
               className="text-primary inline-flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors hover:text-[#0d7ed9]"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
@@ -162,12 +162,12 @@ export default function HeroHeader() {
         <nav className="flex flex-col gap-1">
           {menuItems.map((item) => (
             <a
-              key={`mobile-${item}`}
-              href="#"
+              key={`mobile-${item.name}`}
+              href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="rounded-lg px-3 py-3 text-[13px] font-semibold uppercase tracking-wide text-[#152f45] transition-colors hover:bg-[#f4f7fa] hover:text-[#0d7ed9]"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>

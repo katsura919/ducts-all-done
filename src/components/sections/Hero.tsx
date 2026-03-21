@@ -52,7 +52,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0b1f3a]">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-[#0b1f3a]">
       <HeroHeader />
       <div
         aria-hidden={!showStickyHeader}

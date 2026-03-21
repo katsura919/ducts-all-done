@@ -6,12 +6,12 @@ import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const menuItems = [
-    "Home",
-    "About Us",
-    "Services",
-    "Service Areas",
-    "Reviews",
-    "Contact",
+    { name: "Home", href: "#home" },
+    { name: "About Us", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Service Areas", href: "#service-area" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "Contact", href: "#quote" },
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -32,11 +32,11 @@ export default function Header() {
         <div className="hidden items-center gap-7 md:flex lg:gap-8">
           {menuItems.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.name}
+              href={item.href}
               className="text-[13px] font-semibold uppercase tracking-wide text-[#152f45] transition-colors hover:text-[#0d7ed9]"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </div>
@@ -97,12 +97,12 @@ export default function Header() {
         <nav className="flex flex-col gap-1">
           {menuItems.map((item) => (
             <a
-              key={`mobile-${item}`}
-              href="#"
+              key={`mobile-${item.name}`}
+              href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="rounded-lg px-3 py-3 text-[13px] font-semibold uppercase tracking-wide text-[#152f45] transition-colors hover:bg-[#f4f7fa] hover:text-[#0d7ed9]"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
