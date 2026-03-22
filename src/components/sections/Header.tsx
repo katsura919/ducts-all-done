@@ -16,7 +16,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="px-3 pt-3 md:px-6 md:pt-4">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 pt-3 md:hidden">
       <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-3 rounded-2xl bg-white px-4 py-3 shadow-lg shadow-[#0b1f3a]/20 md:rounded-full md:px-6 md:py-3.5">
         <a href="#" className="shrink-0">
           <Image

@@ -26,7 +26,7 @@ export default function HeroHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header id="hero-header" className="absolute top-0 left-0 right-0 z-50">
+    <header id="hero-header" className="fixed top-0 left-0 right-0 z-50 hidden md:block">
       <div className="hidden w-full md:block">
         <div className="rounded-b-[26px] bg-blue-500 text-white shadow-xl shadow-[#0b1f3a]/30">
           <div className="flex items-center gap-4 px-4 py-3 md:px-8 md:py-2">
@@ -127,6 +127,7 @@ export default function HeroHeader() {
         </div>
       </div>
 
+      {/* Mobile Menu Backdrop (Hidden on Desktop) */}
       <div
         className={`fixed inset-0 z-[60] bg-black/45 transition-opacity duration-300 md:hidden ${
           isMobileMenuOpen
@@ -136,6 +137,7 @@ export default function HeroHeader() {
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
+      {/* Mobile Aside Menu (Hidden on Desktop) */}
       <aside
         className={`fixed left-0 top-0 z-[70] h-dvh w-[82%] max-w-[320px] bg-white p-5 shadow-2xl transition-transform duration-300 md:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"

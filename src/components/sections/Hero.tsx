@@ -54,16 +54,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-[#0b1f3a]">
       <HeroHeader />
-      <div
-        aria-hidden={!showStickyHeader}
-        className={`fixed inset-x-0 top-0 z-[70] transform transition-all duration-300 ease-out ${
-          showStickyHeader
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-3 opacity-0"
-        }`}
-      >
-        <Header />
-      </div>
+      <Header />
       {/* Right-side background image */}
       <div className="absolute right-0 top-0 w-[55%] h-full hidden md:block">
         <Image
