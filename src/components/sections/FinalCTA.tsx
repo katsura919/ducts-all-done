@@ -43,30 +43,8 @@ export default function FinalCTA() {
                   "UV Light Installation",
                 ].map((item) => (
                   <li key={item}>
-                    <a href="#services" className="flex items-center gap-2.5 hover:text-white transition-colors group">
+                    <a href="#services" className="flex items-center gap-2.5 text-white transition-colors group">
                       {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 3: Quick Link */}
-            <div>
-              <h4 className="text-[20px] font-bold text-white mb-8">Quick Link</h4>
-              <ul className="space-y-4 text-[15px] font-medium text-[#2EA3F2]">
-                {[
-                  { name: "Home", href: "#" },
-                  { name: "About", href: "#" },
-                  { name: "Services", href: "#services" },
-                  { name: "Portfolio", href: "#" },
-                  { name: "Pages", href: "#" },
-                  { name: "Contact", href: "#quote" },
-                ].map((link) => (
-                  <li key={link.name}>
-                    <a href={link.href} className="flex items-center gap-2.5 hover:text-white transition-colors group">
-                     
-                      {link.name}
                     </a>
                   </li>
                 ))}
